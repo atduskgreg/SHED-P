@@ -21,13 +21,11 @@ post "/send" do
             :subject => params[:subject],
             :body => params[:body], 
             
-            :via => :smtp, 
-            :smtp => { 
-                :host   => 'smtp.sendgrid.net', 
+            :via_options => => { 
+                :address   => 'smtp.sendgrid.net', 
                 :port   => '25', 
-                :user   => ENV['SENDGRID_USERNAME'], 
-                :pass   => ENV['SENDGRID_PASSWORD'], 
-                :auth   => :plain,
+                :user_name   => ENV['SENDGRID_USERNAME'], 
+                :pass   => ENV['SENDGRID_PASSWORD']
                 :domain => ENV['SENDGRID_DOMAIN']
               } 
 
