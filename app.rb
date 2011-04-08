@@ -21,7 +21,7 @@ post "/send" do
             :subject => params[:subject],
             :body => params[:body], 
             :via => :smtp,
-            :smtp => { 
+            :via_options => { 
                 :address   => 'smtp.sendgrid.net', 
                 :port   => '25', 
                 :user_name   => ENV['SENDGRID_USERNAME'], 
