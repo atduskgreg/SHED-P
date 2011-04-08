@@ -20,12 +20,13 @@ post "/send" do
             :from => 'greg.borenstein@gmail.com',
             :subject => params[:subject],
             :body => params[:body], 
-            
-            :via_options => { 
+            :via => :smtp,
+            :smtp => { 
                 :address   => 'smtp.sendgrid.net', 
                 :port   => '25', 
                 :user_name   => ENV['SENDGRID_USERNAME'], 
-                :pass   => ENV['SENDGRID_PASSWORD'],
+                :password   => ENV['SENDGRID_PASSWORD'],
+                :authorization => :plain,
                 :domain => ENV['SENDGRID_DOMAIN']
               } 
 
