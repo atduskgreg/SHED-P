@@ -25,7 +25,7 @@ post "/send" do
                 :address   => 'smtp.sendgrid.net', 
                 :port   => '25', 
                 :user_name   => ENV['SENDGRID_USERNAME'], 
-                :pass   => ENV['SENDGRID_PASSWORD']
+                :pass   => ENV['SENDGRID_PASSWORD'],
                 :domain => ENV['SENDGRID_DOMAIN']
               } 
 
